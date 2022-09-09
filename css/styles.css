@@ -215,6 +215,9 @@ ol {
   width: 100%;
   height: 100%;
   z-index: 10;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
   background: rgba(0, 0, 0, 0.2);
   transition: opacity 500ms ease, visibility 250ms ease;
 }
@@ -227,12 +230,12 @@ ol {
   position: absolute;
   top: 50%;
   left: 50%;
-  text-align: center;
+  transform: translate(-50%, -50%);
   height: 581px;
   width: 528px;
+  padding: 40px;
   background-color: var(--primary-bg-color);
   border-radius: 4px;
-  transform: translate(-50%, -50%);
   transition-duration: 2500ms var(--timing-function);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -248,11 +251,17 @@ ol {
   height: 30px;
   border-radius: 50%;
   background-color: transparent;
-  border: 1px solid #303030;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0;
   cursor: pointer;
-  transition-duration: 250ms var(--timing-function);
+  transition-duration: 250ms var(--timing-function),
+    fill 250ms var(--timing-function);
 }
+.modal-close-btn:focus,
+.modal-close-btn:hover {
+  fill: var(--primery-accent-color);
+}
+
 .model-open-but {
   display: inline-block;
   text-align: center;
@@ -270,6 +279,48 @@ ol {
   color: var(--secondaty-bg-color);
   transition-duration: 250ms var(--timing-function);
 }
+.modal-form-field {
+margin-bottom: 20px;  
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  display: block;
+  transform: translateY(-50%);
+  transition: border-color var(--timing-function);}
+
+.flay {
+  display: inline-block;
+  text-align: left;
+  width: 200px;
+  height: 50px;
+  padding: 10px 28px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.8;
+  letter-spacing: 0.06em;
+  border-radius: 4px;
+  border: 0px solid transparent;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
+  cursor: pointer;
+  background-color: var(--primery-accent-color);
+  color: var(--secondaty-bg-color);
+  transition-duration: 250ms var(--timing-function);
+}
+.flay-svg-item {
+  position: relative;
+}
+.flay-svg {
+  position: absolute;
+  top: 50%;
+  right: 15%;
+  margin: 0;
+  transform: translate(0, -50%);
+}
+
 
 .model-open-button {
   display: inline-block;
@@ -296,30 +347,16 @@ ol {
   box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
 }
 .form {
-  width: 450px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 40px;
-}
-.form-field {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
 }
-.form-field input {
-  margin: 0;
-  padding: 10px 15px;
-  border-radius: 3px;
-  border: 1px solid #2a2a2a;
-}
-.form-field label {
-  margin-bottom: 5px;
-}
-.umova-dogovoru .date {
+
+.date-com {
+  height: 120px;
+  width: 100%;
   border-width: 1px;
   border-radius: 4px;
-  padding: 11px;
-  font-size: 40px;
+  padding: 16px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   font-weight: 400;
   font-size: 12px;
@@ -327,16 +364,67 @@ ol {
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
+.label-span-model {
+  display: block;
+  font-weight: 400;
+  line-height: 1.16px;
+  letter-spacing: 0.01em;
+  color: #757575;
+  margin-bottom: 10px;
+  
+}
+.input-date {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding-left: 42px;
+transition: border-color var(--timing-function);}
+  
+ .input-date:focus + .icon{
+  fill: var(--primery-accent-color);
+ }
+  
+
+.input-date:focus {
+  outline: none;
+  border-color: var(--primery-accent-color);
+} 
+
+.date-com:focus {
+  outline: none;
+  border-color: var(--primery-accent-color);
+}
+
+.modal-form-input-wrapper {
+  position: relative;
+  display: block;
+  
+}
 
 .dogovir {
   text-decoration: underline;
-  color: #2196f3;
+  color: var(--primery-accent-color);
 }
 textarea {
   resize: none;
 }
+
+.checkbox {
+  appearance: none;
+  position: absolute;
+}
+.checkbox-icon {
+  display: inline-block;
+}
+.checkbox:checked + .checkbox-icon {
+  background-size: contain;
+  background-image: url("../images/icons.svg#icon-close");
+}
+
 .zagolovor {
   margin-bottom: 12px;
+  font-family: var(--logo-font);
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
@@ -344,6 +432,7 @@ textarea {
   color: var(--title-text-color);
 }
 .send {
+  width: 200px;
   text-align: center;
   padding: 10px 32px;
   margin-top: 30px;
@@ -360,16 +449,15 @@ textarea {
   color: var(--secondaty-bg-color);
 }
 .mail-list {
-  Width: 358px;
+  width: 358px;
   padding: 15px;
   font-weight: 400;
   line-height: 1.25;
   border-radius: 4px;
-  background: #2F303A;
+  background: #2f303a;
   color: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-  
 }
 .umova-dogovoru {
   text-align: left;
@@ -619,6 +707,12 @@ textarea {
   align-items: center;
   justify-content: center;
   column-gap: 10px;
+}
+.podpiska-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 12px;
 }
 .list-blok {
   padding-left: 24px;

@@ -468,6 +468,7 @@ textarea {
   cursor: pointer;
   background-color: var(--primery-accent-color);
   color: var(--secondaty-bg-color);
+  transition: background-color var(--timing-function)
 }
 .mail-list {
   width: 358px;

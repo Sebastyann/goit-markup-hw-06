@@ -237,7 +237,7 @@ ol {
   background-color: var(--primary-bg-color);
   border-radius: 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-  0px 2px 1px rgba(0, 0, 0, 0.2);
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .modal-close-btn {
   position: absolute;
@@ -279,7 +279,11 @@ ol {
   transition-duration: 250ms var(--timing-function);
 }
 .modal-form-field {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
 }
 
 .icon {
@@ -351,17 +355,14 @@ ol {
 }
 
 .date-com {
-  height: 120px;
+  display: block;
   width: 100%;
-  border-width: 1px;
-  border-radius: 4px;
-  padding: 16px;
+  height: 120px;
+  margin-top: 4px;
+  padding: 12px 16px;
+  resize: none;
   border: 1px solid rgba(33, 33, 33, 0.2);
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.01em;
-  color: black;
+  border-radius: 4px;
   transition: border-color var(--timing-function);
 }
 .label-span-model {
@@ -383,7 +384,7 @@ ol {
 
 .input-date:focus + .icon {
   fill: var(--primery-accent-color);
-  }
+}
 
 .input-date:focus {
   outline: none;
@@ -398,11 +399,12 @@ ol {
 .modal-form-input-wrapper {
   position: relative;
   display: block;
+  margin-top: 4px;
 }
 
 .modal-form-own-checkbox-icon {
   display: none;
-  }
+}
 
 .dogovir {
   text-decoration: underline;
@@ -426,9 +428,8 @@ textarea {
 }
 
 .checkbox-label {
-display: flex;
-justify-content: center;
-;
+  display: flex;
+  justify-content: center;
 }
 
 .modal-form-own-checkbox {

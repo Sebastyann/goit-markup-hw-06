@@ -312,7 +312,7 @@ ol {
   cursor: pointer;
   background-color: var(--primery-accent-color);
   color: var(--secondaty-bg-color);
-  transition-duration: 250ms var(--timing-function);
+  transition: background-color var(--timing-function);
 }
 .flay-svg-item {
   position: relative;

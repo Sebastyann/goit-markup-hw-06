@@ -279,7 +279,7 @@ ol {
   transition-duration: 250ms var(--timing-function);
 }
 .modal-form-field {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;

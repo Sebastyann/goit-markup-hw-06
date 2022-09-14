@@ -296,9 +296,9 @@ ol {
 }
 
 .flay {
-     display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-align: left;
   width: 200px;
   height: 50px;
@@ -318,7 +318,8 @@ ol {
 }
 
 .flay-svg {
-margin-left: 10px;}
+  margin-left: 10px;
+}
 
 .model-open-button {
   display: inline-block;
@@ -462,7 +463,7 @@ textarea {
   cursor: pointer;
   background-color: var(--primery-accent-color);
   color: var(--secondaty-bg-color);
-  transition: background-color var(--timing-function)
+  transition: background-color var(--timing-function);
 }
 .mail-list {
   width: 358px;
@@ -733,7 +734,6 @@ textarea {
   align-items: center;
   justify-content: center;
   column-gap: 12px;
-  
 }
 .list-blok {
   padding-left: 24px;
